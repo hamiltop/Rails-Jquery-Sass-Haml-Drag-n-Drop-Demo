@@ -1,0 +1,13 @@
+%h1 Change color by dragging and dropping 
+
+- @pieces.each do |piece|
+  .pc{:class => piece.color, :data => {:type => "piece", :id => piece.id, :color => piece.color}}
+    Piece
+    = piece.id
+#colors
+  .color_square{:class => "white", :data => {:color => "white"}}
+  .color_square{:class => "black", :data => {:color => "black"}}
+  .color_square{:class => "blue", :data => {:color => "blue"}}
+  .color_square{:class => "green", :data => {:color => "green"}}
+#links
+  = link_to 'New Piece', new_piece_path
